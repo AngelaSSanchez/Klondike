@@ -54,6 +54,10 @@ public class Deck {
     	return this.discard;
     }
     
+    public ArrayList<TypeofSuit> getSuits(){
+    	return this.totalsuites;
+    }
+    
     public void movetoDiscard(){
     	int index = 0;
 		while(index<3 && card.size()>0){
