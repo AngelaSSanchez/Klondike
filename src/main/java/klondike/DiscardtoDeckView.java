@@ -9,7 +9,13 @@ public class DiscardtoDeckView{
 	}
 	
 	public void render() {
-		// TODO Auto-generated method stub
+		IO io = new IO();
+		if (!discardtodeck.getDeck().getCards().isEmpty()){
+			io.write("Todavia hay cartas en la baraja");
+		}
+		else{
+			discardtodeck.movetoDeck();
+		}
 		
 	}
 

@@ -14,8 +14,7 @@ public class MenuView{
 	}
 	
 	public void render(){
-		do{		
-			printDeck();
+		do{
 			printMenu();
 			int option = new LimitedIntDialog("Opcion?", 1,MenuView.NUMOPTION).read();
 			if (option == MenuView.NUMOPTION) {
@@ -23,6 +22,7 @@ public class MenuView{
 				System.exit(0);
 			}
 			menucontroller.setOption(option);
+			new DeckView(menucontroller.getDeck()).render();
            
 		}while(option != 0);
 	}
@@ -40,11 +40,5 @@ public class MenuView{
 		io.writeln("8. Voltear en escalera");
 		io.writeln("9. Salir");
 	}
-	
-	private void printDeck(){
-		io = new IO();
-		io.writeln("=================================");
-	}
-	
 	
 }

@@ -7,6 +7,7 @@ public abstract class Controller {
 	protected Controller(Deck deck){
 		assert deck != null;
 		this.deck = deck;
+		this.deck.shuffle();
 	}
 	
 	public Deck getDeck(){

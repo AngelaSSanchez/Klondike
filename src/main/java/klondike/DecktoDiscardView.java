@@ -9,8 +9,13 @@ public class DecktoDiscardView{
 	}
 
 	public void render() {
-		// TODO Auto-generated method stub
-		
+		IO io = new IO();
+		if (decktodiscard.getDeck().getCards().isEmpty()){
+			io.writeln("No hay más cartas en la baraja");
+		}
+		else{
+			decktodiscard.movetoDiscard();
+		}
 	}
 	
 	

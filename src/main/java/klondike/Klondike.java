@@ -11,15 +11,21 @@ public class Klondike {
 	
 	private MenuView menuview;
 	
+	private MoveView moveview;
+	
+	
+	
 	public Klondike(){
 		deck = new Deck();
 		controller = new MoveController(deck);
 		menucontroller = new MenuController(deck);
 		menuview = new MenuView(menucontroller);
+		moveview = new MoveView(controller);
 	}
 	
 	public void play() {
 		menuview.render();
+		moveview.render();
 	}
 
 	public static void main(String[] args) {

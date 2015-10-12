@@ -10,6 +10,8 @@ public class Deck {
 	
 	private ArrayList<Card> card = new ArrayList<Card>(DECK);
 	
+	private ArrayList<Card> discard = new ArrayList<Card>();
+	
 	private ArrayList<TypeofSuit> totalsuites = new ArrayList<TypeofSuit>(NUMOFSUITS);
 	
 	public Deck deck;
@@ -34,4 +36,37 @@ public class Deck {
 		}
 	}
 	
+    public  ArrayList<Card> shuffle() {
+        ArrayList<Card> temp = new ArrayList<Card>();
+        while(!card.isEmpty()) {
+            int loc=(int)(Math.random()*card.size());
+            temp.add(card.get(loc));
+            card.remove(loc);   
+        }
+        return card = temp;
+    }
+	
+    public  ArrayList<Card> getCards() {
+    	return this.card;
+    }
+    
+    public  ArrayList<Card> getDiscard() {
+    	return this.discard;
+    }
+    
+    public void movetoDiscard(){
+    	int index = 0;
+		while(index<3 && card.size()>0){
+			discard.add(card.get(0));
+			card.remove(0);
+			index++;
+		}
+    }
+    
+    public void movetoDeck(){
+    	for(int i = 0; i < discard.size(); i++){
+    		card.add(discard.get(i));
+    	}
+    }
+    
 }
